@@ -5,7 +5,7 @@ from tweepy import OAuthHandler
 from textblob import TextBlob
 
 
-class TwitterClient(object):
+class TwitterClnt(object):
     '''
     Generic Twitter Class for the App
     '''
