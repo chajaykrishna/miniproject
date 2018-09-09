@@ -81,7 +81,7 @@
 		  document.body.removeChild(element);
 		}
 		$(document).ready(function(){
-			load_tweets('androidestate');
+			load_tweets('android');
 		});
 		$('#search').click(function(){
 			$('#loading').html('Loading...');
@@ -113,7 +113,7 @@
                     enabled: true,
                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'white'
                     }
                 }
             }
