@@ -12,23 +12,103 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 </head>
+
+<!-- code for header-->
+	<style>
+	* {box-sizing: border-box;}
+
+	body { 
+	  margin: 0;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.header {
+	  overflow: hidden;
+	  background-color: #f1f1f1;
+	  background-image: linear-gradient(to right, red , yellow);
+	  padding: 20px 10px;
+	}
+
+	.header a {
+	  float: left;
+	  color: white;
+	  text-align: center;
+	  padding: 12px;
+	  text-decoration: none;
+	  font-size: 18px; 
+	  line-height: 25px;
+	  border-radius: 4px;
+	}
+
+	.header a.logo {
+	  font-size: 25px;
+	  font-weight: bold;
+	}
+
+	.header a:hover {
+	  background-color: white;
+	  color: #ff0000;
+	}
+
+	.header a.active {
+	  background-color: dodgerblue;
+	  color: white;
+	}
+
+	.header-right {
+	  float: right;
+	}
+
+	@media screen and (max-width: 500px) {
+	  .header a {
+	    float: none;
+	    display: block;
+	    text-align: left;
+	  }
+	  .header-right {
+	    float: none;
+	  }
+	}
+	</style>
+
+
+
+
+
+
 <body>
-	<div class='container-fluid'>
+
+		<div class="header">
+	  <a href="http://androidestate.com" class="logo">TWEET ANALYZER</a>
+	  <div class="header-right">
+	    <a class="active" href="http://androidestate.com">Home</a>
+	  </div>
+	</div>
+
+
+
+
+
+	<div class='container-fluid'style="padding-left: 0px;
+    padding-right: 0px;">
 		<div class='text-center'>
-			<h1>Tweets Analysis</h1>
-			<h5>Search for Tweets their Polarity</h5>
 			
-			<div id="search_box" class="container-fluid">
-				<input type="text" id="query">
-				<button id="search">Search</button>
+			
+			<div style="background-image: url(twitter_background.jpg); height: 500px; width: 100%;">
+				<h5 style="padding: 111px 0 0;font-size: 48px;color: white;font-family: sans-serif;">Search Tweets for their Polarity</h5>
+			<div id="search_box" class="container-fluid" >
+				<input type="text" id="query" placeholder="Search"  style=" border-radius: 15px 50px;   margin: 25px auto;width: 80%;height: 42px;">
+				<button id="search" style="background-color: #890ff8;color:white;">Search</button>
 				<button id="getcsv">Download CSV</button>
-				<div id="loading">Loading...</div>
-				<div id="container"></div>
+				<div id="loading" style="color:white;">Loading...</div>
+			</div>
+			</div>	
+				<div id="container" style="width:80%"></div>
 					<button id="plain">Plain</button>
 					<button id="inverted">Inverted</button>
 					<button id="polar">Polar</button>
 				
-			</div>	
+			
 		</div>
 		<div id="tweets"></div>
 		<footer class="text-center">
