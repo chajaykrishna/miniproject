@@ -95,18 +95,17 @@
 			
 			
 			<div style="background-color: #a49696; height: 500px; width: 100%;">
-				<h5 style="padding: 111px 0 0;font-size: 48px;color: white;font-family: sans-serif;">Search Tweets for their Polarity</h5>
+				<h5 style="padding: 111px 0 0;font-size: 48px;color: white;font-family: sans-serif;">Search for Tweets </h5>
+				<p style="color:white"> for professional Data Analysts</p>
 			<div id="search_box" class="container-fluid" >
 				<input type="text" id="query" placeholder="Search"  style=" border-radius: 18px;   margin: 25px auto;width: 80%;height: 42px;">
-				<button id="search" style="background-color: #890ff8;color:white;">Search</button>
-				<button id="getcsv">Download CSV</button>
+				<button id="search" style="border-radius: 12px;padding: 10px; background-color: #890ff8;color:white;">Search</button>
+				<button id="getcsv"  style="border-radius: 12px; padding: 10px;background-color: #890ff8;color:white;" >Download CSV</button>
 				<div id="loading" style="color:white;">Loading...</div>
 			</div>
 			</div>	
-				<div id="container" style=" align:center; width:80%;"></div>
-					<button id="plain">Plain</button>
-					<button id="inverted">Inverted</button>
-					<button id="polar">Polar</button>
+				<div id="container" align="center" style="  width:80%; margin-bottom: 50px"></div>
+					
 				
 			
 		</div>
@@ -197,41 +196,8 @@
 				});
 
 
-				$('#plain').click(function () {
-				    chart.update({
-				        chart: {
-				            inverted: false,
-				            polar: false
-				        },
-				        subtitle: {
-				            text: 'Plain'
-				        }
-				    });
-				});
-
-				$('#inverted').click(function () {
-				    chart.update({
-				        chart: {
-				            inverted: true,
-				            polar: false
-				        },
-				        subtitle: {
-				            text: 'Inverted'
-				        }
-				    });
-				});
-
-				$('#polar').click(function () {
-				    chart.update({
-				        chart: {
-				            inverted: false,
-				            polar: true
-				        },
-				        subtitle: {
-				            text: 'Polar'
-				        }
-				    });
-				});
+				
+				
 }; 
 function getNegativePercentage(data) {
 	var current_data = data['data'];

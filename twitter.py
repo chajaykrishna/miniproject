@@ -23,11 +23,11 @@ class TwitterClnt(object):
             self.retweets_only = retweets_only
             self.with_sentiment = with_sentiment
             self.api = tweepy.API(self.auth)
-            self.tweet_count_max = 50  # To prevent Rate Limiting
+            self.tweet_count_max = 100  # To prevent Rate Limiting
         except:
             print("Error: Authentication Failed")
 
-    def set_query(self, query=''):
+    def set_query(self, query='android'):
         self.query = query
 
     def set_retweet_checking(self, retweets_only='false'):
