@@ -59,7 +59,17 @@
 	.header-right {
 	  float: right;
 	}
-
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+  	display: none;
+    
+  }
+}
 	
 	</style>
 
@@ -111,7 +121,7 @@
 	 var current_data;
 		function sentiment_to_color(sentiment){
 			if(sentiment == 'positive') return 'panel-success';
-			else if(sentiment == 'negative') return 'panel-danger';
+			else if(sentiment == 'negative') return #ffffff;
 			else return 'panel-primary';
 		}
 		function load_tweets(querystring){
