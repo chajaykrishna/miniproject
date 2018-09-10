@@ -98,10 +98,10 @@
 			download('data.csv', get_csv(current_data));
 		});
 	function buildChart(data) {
-				    chart = Highcharts.chart('container', {
+				   var chart = Highcharts.chart('container', {
 
 				    title: {
-				        text: 'last 50 tweets on '+$('#query').val()
+				        text: 'last 100 tweets on '+$('#query').val()
 				    },
 
 				    subtitle: {
@@ -161,7 +161,7 @@ function getNegativePercentage(data) {
 			counter ++;
 	}
 		console.log('negative',counter)
-	return counter/data.count;
+	return counter;
 }
 function getPositivePercentage(data) {
 	var current_data = data['data'];
@@ -171,7 +171,7 @@ function getPositivePercentage(data) {
 			counter ++;
 	}
 		console.log('positive',counter)
-	return counter/data.count;
+	return counter;
 }
 function getNeutralPercentage(data) {
 	var current_data = data['data'];
@@ -181,28 +181,18 @@ function getNeutralPercentage(data) {
 			counter ++;
 	}
 	console.log('neutral',counter)
-	return counter/data.count;
+	return counter;
 }
 function getPercentage(data) {
 	var neutral = getNeutralPercentage(data);
 	var positive = getPositivePercentage(data);
 	var negative = getNegativePercentage(data);
 	return [{
-            name: 'Tweets',
-            //colorByPoint: true,
-            data: [{
-                name: 'Positive',
-                y: positive
-            }, {
-                name: 'Negative',
-                y: negative,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'Neutral',
-                y: neutral
-            }]
-        }]
+        type: 'column',
+        colorByPoint: true,
+        data: [positive, negative, neutral],
+        showInLegend: false
+    }]
 	// body...
 }
 	</script>
