@@ -22,7 +22,7 @@ piexif==1.0.13
 Pillow==5.0.0
 placeholders==1.1
 pluggy==0.6.0
-py==1.5.2
+py==1.10.0
 pyparsing==2.2.0
 PySocks==1.6.8
 pytesseract==0.2.2
